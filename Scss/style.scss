@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bai Jamjuree", sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(125deg, #153677, #4e885f);
+    padding: 10px;
+
+    .todoApp {
+        width: 100%;
+        background: #ffff;
+        max-width: 540px;
+        margin: 100px auto 20px;
+        border-radius: 10px;
+        padding: 40px 30px 70px;
+
+        h1 {
+            color: #002765;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+
+            img {
+                width: 30px;
+                margin-left: 10px;
+            }
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: #edeef0;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            input{
+                font-size: 20px;
+                border: none;
+                outline: none;
+                background: transparent;
+                padding: 10px;
+                flex: 1;
+                &::placeholder{
+                    text-transform: capitalize;
+                    font-weight: 600;
+                }
+               
+            }
+            .btn{
+                background: #ff5945;
+                color: #fff;
+                border: none;
+                outline: none;
+                padding: 10px 50px;
+                border-radius: 30px;
+                font-size: 22px;
+                font-weight: 600;
+            }
+        }
+        ul li{
+            list-style: none;
+            padding: 12px 8px 12px 50px;
+            font-size: 18px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+            &::before{
+                position: absolute;
+                content: '';
+                top: 12px;
+                left: 8px;
+                background-image: url('../images/unchecked.png');
+                background-size: cover;
+                background-position: center;
+                width: 28px;
+                height: 28px;
+            }
+            &.checked{
+                text-decoration: line-through;
+                color: #555;
+                &::before{
+                    background-image: url('../images/checked.png');
+                }
+            }
+            span{
+                font-size: 25px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                position: absolute;
+                top: 5px;
+                right: 0;
+                background: #edeef0;
+                border-radius: 50px;
+                text-align: center;
+                margin: auto;
+                &:hover{
+                    background: #4e885f;
+                    font-weight: 600;
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width:480px){
+    .todoApp h1{
+        margin:  auto!important;
+        text-align: center!important;
+        display: block!important;
+        margin-bottom: 15px!important;
+    }
+    .todoApp .row {
+        background: transparent!important;
+    }
+    .todoApp .row input{
+        background: #edeef0!important;
+        border-radius: 50px;
+        padding-inline: 20px!important;
+        font-size: 16px!important;
+    }
+    .todoApp .row button{
+        display: block!important;
+        margin-top: 10px;
+        flex: 1;
+
+    }
+}
